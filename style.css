@@ -126,21 +126,23 @@ img {
 /* HEADER */
 .header {
   background: var(--dark);
-  position: fixed;
   width: 100%;
-  z-index: 999;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
-    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
-    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  position: fixed;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.header .header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .header .header__nav ul {
   display: flex;
+  flex-direction: row;
 }
-.header .header__nav ul li {
-  /* background:var(--light); */
+.header .header__nav ul li {    
   padding: 2rem;
 }
-.header .header__nav ul li a {  
+.header .header__nav ul li a {
   color: var(--light);
 }
 .header .header__nav ul li:hover {
@@ -149,81 +151,216 @@ img {
 .header .header__nav ul li:hover a {
   color: var(--primary);
 }
-.header .header__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 1rem;
+.header a {
+  color: var(--light);
 }
+
 /* CONTACT */
-.contact{
-  background:var(--dark);
+.contact {
+  background-color: var(--dark);
+  height: 75vh;
+}
+.contact .contact__wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+.contact .contact__wrapper .contact__form {
+  padding-top: 15rem;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5rem;
+  width: 75rem;
+}
+.contact form input {
+  padding: 1.5rem;
+}
+.contact textarea {
+  min-height: 200px;
+  resize: none;
+  font-size: 2rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+.contact .contact__form a {
+  color: var(--light);
+  background: var(--primary);
+  width: 20rem;
+  padding: 2rem;
+  border-radius: 6rem;
+  text-align: center;
+  margin-left: 45rem;
+  align-self: end;
+}
+.contact h2 {
+  color: var(--primary);
+  font-size: 5rem;
+  font-weight: 600;
+}
+.contact tr td {
+  color: var(--light);
+}
+.contact tr {
+  display: flex;
+  gap: 5rem;
+  height: 6rem;
+  width: 40rem;
+}
+.contact .contact__title {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding-bottom: 9rem;
+}
+
+.contact p {
+  font-size: 2rem;
+  color: var(--light);
+}
+.contact .contact__social {
+  position: relative;
+}
+
+.contact .contact__social i {
+  color: var(--primary);
+  font-size: 3rem;
+}
+.contact .contact__social td a {
+  color: var(--light);
+  position: absolute;
+  font-size: 2rem;
+  margin-top: 5rem;
+  font-size: 3rem;
+}
+/* FOOTER */
+.footer {
+  background-color: var(--dark);
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  border-top: 2px solid white;
+}
+.footer .footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  opacity: 50%;
+}
+.footer .footer__social {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  gap: 2rem;
+}
+.footer .footer__social a {
+  color: var(--light);
+  font-size: 3rem;
+}
+.footer .footer__wrapper p {
+  color: var(--light);
+}
+@media screen and (max-width:500px){
+    .header{
+    background:var(--dark);
+    width:100%;
+    transform:translateY(0rem)
   }
-  .contact h2{
-  font-size:5rem;
-  font-weight:800;
-  color:var(--primary);
-  padding-top:7rem;
+  .header .header__nav{
+    background:var(--dark);
+    position:absolute;
+    top:10.2rem;
+    right:-100rem;
+    width:100%;
+    height:100vh;
+    border-top:1px solid var(--light);
+    transition: .5s ease;
+  }
+  .header .header__nav ul{
+    display: flex;
+    flex-direction:column;
+    text-align:center;
+    padding-top:8rem;
+    gap:3rem;
+  }
+  .header .header__nav ul li{
+    width:20rem;
+    margin:0 auto;
+    font-size:2.5rem;
+  }
+  .contact {
+    height:125vh;
   }
   .contact .contact__wrapper{
-  display:grid;
-  grid-template-columns:50% 50%;
-  grid-gap:10rem; 
-  display:flex;
-  flex-direction:row-reverse;
-  padding-top:15rem;
-  justify-content: space-between;
-  }
-  .contact form{
-    background:var(--dark);
-  padding:3rem;
   display:flex;
   flex-direction:column;
-  gap:3rem;
-  max-width:50rem
-  }
-  .contact .contact__wrapper a{
-    background: var(--primary);
-    border-radius:3rem;
-    height:5rem;
-    width:15rem;
-    text-align: center;
-    padding-top: 1.5rem;
-  }
-  .contact form input{
-  height: 5rem;
-  padding:0 3rem;
-  }
-  .contact form textarea{
-  padding:1rem 3rem;
-  resize:none;
-  height:200px;
+  gap:0rem;
+}
+.contact h2{
+  font-size:5rem;
+  text-align:center;
+}
+.contact tr:last-child{
+  display:flex;
+  justify-content:center;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
   width: 50rem;
-  }
-  .contact table tr{
-  height:5rem;
-  display: flex;
+}
+.contact .contact__form a {
+  width: 45rem;
   text-align: center;
+  align-self: end;
+  border-radius: 6rem;
+  width: 20rem;
+}
+.contact .contact__wrapper .contact__form {
+  padding-top: 5rem;
+}
+    .footer .footer__wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:3rem;
   }
-  .contact .contact__table td:first-child{
-  width:5rem;
-  font-size:3rem;
-  color: var(--primary);
+  .footer .footer__social{
+    gap:5rem;
   }
-  .contact .contact__social{
-  color: var(--light);
+  .footer p{
+    text-align:center;
   }
-  .contact .contact__social li{
+}
+/* .bannerZ  */
+  .bannerZ{
+    background: var(--dark);
+    position: relative;
+  }
+  .bannerZ h2{
     color: var(--primary);
-    background: var(--pink);
+    width: 25rem;
+    font-size: 3rem;
   }
-  .contact p{
-  color: var(--light);
-  padding-bottom:8rem;
-  padding-top:5rem;
-  display: flex;
-  flex-direction: center;
+  .bannerZ h4{
+    color: var(--primary);
   }
+  .bannerZ .bannerZ__item:nth-child(odd){
+    display:flex;
+    flex-direction: row-reverse;
+    background-color: var(--light);
+    margin:1rem;
+  }
+  .bannerZ .bannerZ__item:nth-child(even){
+    color: var(--light);
+    display:flex;
+    flex-direction: row;
+    background-color: var(--dark);
+  }
+  
 /*REPEATABLE PATTERNS*/
 :root {
   --primary: #ffa700;
